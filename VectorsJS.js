@@ -5,12 +5,36 @@
 //
 
 
+
+  // Some function for quality ;)  ///
+
+
 function getRandomInt(min, max){
   
   
 
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+ function getRect ( TopLeft , DownRight) {
+    
+    var obj = {
+      
+      TopLeft : new Vector (TopLeft.x , TopLeft.y),
+      
+      TopRight : new Vector ( DownRight.x - TopLeft.x , TopLeft.y),
+      
+      DownRight : new Vector (DownRight.x , DownRight.y),
+      
+      DownLeft : new Vector ( TopLeft.x , DownRight.y)
+      
+      
+    }
+    
+    return obj;
+    
+    
+  }
   
 
 
@@ -108,24 +132,7 @@ class Vector{
   }
   
   
-  
-  
-  appendX (vec) {
-    
-    return new Vector(this.x + vec.x, this.y );
-    
-  }
-  
-  appendY (vec) {
-    
-    return new Vector( this.x, this.y + vec.y);
-    
-  }
-  append (vec) {
-    
-    return new Vector(this.x + vec.x, this.y + vec.y );
-    
-  }
+
   
   rotate (angle) {
     
@@ -150,6 +157,9 @@ class Vector{
     return new Vector (x , y);
     
   }
+  
+  
+
   
   
   
